@@ -4,6 +4,7 @@ public class PaintingTester {
         
         Painting coolPainting = new Painting();
         coolPainting.inspect();
+        coolPainting.measure();
         coolPainting.buy();
         coolPainting.location();
     }

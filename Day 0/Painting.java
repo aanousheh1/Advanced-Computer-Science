@@ -7,8 +7,8 @@ public class Painting {
 
     private int numreddots; // = 10
     private int price; 
-    private String Paintinglocation; // = "sand dunes"
-    private double Widthofdots_inches; //  = 1.5
+    private String paintingLocation; // = "sand dunes"
+    private double widthofdots_inches; //  = 1.5
     private boolean iscool; // = true
     private double height_feet; // = 2
     char paintinggrade; // = 'A'
@@ -23,8 +23,23 @@ public class Painting {
     }
     //public_WhatComesOUT_ _nameOfFunction_(_inputs_) {    
     // inspect
+    
+    public void bid(int bidPrice) {
+        if (bidPrice < 100){
+            System.out.println("The bid has to be greater than 100 dollars!");
+        }
+        else {
+            System.out.println("Thanks for submitting a bid. We will let you know if you win!");
+        }
 
-    public void admire () {
+        
+        }
+
+    }
+
+
+
+    public void measure () {
         height_feet = 2;
         System.out.println("The height of this painting in feet is" );
         System.out.println(height_feet);
@@ -45,7 +60,7 @@ public class Painting {
     }
     public void buy () {
         price = 100;
-        System.out.println("This painting is" );
+        System.out.println("The cost of this painting is" );
         System.out.println(price);
 
     }
