@@ -39,7 +39,8 @@ public class Rectangle {
 
     // methods
     public int calculateArea() {
-        calculateArea = length * width
+        int calculateArea = length * width;
+        return calculateArea;
     }
 
     public int calculatePerimeter() {
