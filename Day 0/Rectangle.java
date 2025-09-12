@@ -1,6 +1,10 @@
 public class Rectangle {
     private int length;
     private int width;
+    private int area; 
+    private int perimeter;
+    private double diagonal; 
+   
 
     // constructors
     
@@ -14,12 +18,14 @@ public class Rectangle {
     }
 
     // define the instance variables with the local parmeters
+
     public Rectangle(int desiredLength, int desiredWidth) {
         length = desiredLength;
         width = desiredWidth;
     }
 
     //getters
+
     public int getLength() {
         return length; 
     }
@@ -28,26 +34,73 @@ public class Rectangle {
         return width; 
     }
 
+    public int getArea() {
+        calculateArea();
+        return area;
+    }
+
+    public double getDiagonal() {
+        calculateDiagonal();
+        return diagonal;
+    }
+
+    public int getPerimeter() {
+        calculatePerimeter();
+        return perimeter;
+    }
+
     // setters
+
     public void setLength(int newLength) {
-        length = newLength
+        length = newLength;
 
     }
+    
     public void setWidth(int newWidth) {
-        width = newWidth
+        width = newWidth;
+    }
+
+    public void setArea(int area) {
+        this.area = area;
+    }
+
+    public void setDiagonal(int diagonal) {
+        this.diagonal = diagonal;
+    }
+
+    public void setPerimeter(int perimeter) {
+        this.perimeter = perimeter;
     }
 
     // methods
+
     public int calculateArea() {
         int calculateArea = length * width;
+        this.area = calculateArea;
         return calculateArea;
     }
 
     public int calculatePerimeter() {
-        calcualtePerimeter = (length * 2) + (width * 2)
+        int calculatePerimeter = (length * 2) + (width * 2);
+        this.perimeter = calculatePerimeter;
+        return calculatePerimeter;
+      
     }
 
-    public int calculateDiagonal() {
-
+    public double calculateDiagonal() {
+        double calculateDiagonal = Math.sqrt((length * length) + (width * width));
+        this.diagonal = calculateDiagonal;
+        return calculateDiagonal;
+     
     }
-}
+
+    public boolean equals(Rectangle other) {
+        if(this.length == other.length && this.width == other.width) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    }
+

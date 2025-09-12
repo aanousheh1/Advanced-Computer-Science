@@ -8,15 +8,15 @@ public class Painting {
     private int numreddots; // = 10
     private int price; 
     private String paintingLocation; // = "sand dunes"
-    private double widthofdots_inches; //  = 1.5
+    private double widthOfDots_Inches; //  = 1.5
     private boolean iscool; // = true
     private double height_feet; // = 2
     char paintinggrade; // = 'A'
 
     public Painting() {
         numreddots = 10;
-        Paintinglocation = "sand dunes";
-        Widthofdots_inches = 1.5;
+        paintingLocation = "sand dunes";
+        widthOfDots_Inches = 1.5;
         iscool = true;
         height_feet = 2;
         paintinggrade = 'A';
@@ -52,9 +52,9 @@ public class Painting {
     }
 
     public void location () {
-         Paintinglocation = "sand dunes";
+         paintingLocation = "sand dunes";
          System.out.println("This painting is located in" );
-         System.out.println(Paintinglocation);
+         System.out.println(paintingLocation);
 
     }
     public void buy () {
@@ -67,7 +67,37 @@ public class Painting {
     // admire
     // sell
     // buy
-    public static void main() {
 
+    public String toString() {
+        return "This painting costs " + price + " Also the number of red dots is " + numreddots;
+        
     }
+
+    public boolean equals(Painting otherPainting) {
+        if (
+              this.numreddots == otherPainting.numreddots &&
+              this.widthOfDots_Inches == otherPainting.widthOfDots_Inches &&
+              this.height_feet == otherPainting.height_feet &&
+              this.iscool == otherPainting.iscool &&
+              this.paintingLocation.equals(otherPainting.paintingLocation) 
+
+        ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public boolean getiscool() {
+        return this.iscool;
+
+        }
+    
+    public void setheight_feet(int height_feet){
+        this.height_feet = height_feet;
+    }
+    
+   
+    
 }
