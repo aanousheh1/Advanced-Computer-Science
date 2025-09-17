@@ -55,7 +55,7 @@ public class Rectangle {
         length = newLength;
 
     }
-    
+
     public void setWidth(int newWidth) {
         width = newWidth;
     }
@@ -95,12 +95,11 @@ public class Rectangle {
     }
 
     public boolean equals(Rectangle other) {
-        if(this.length == other.length && this.width == other.width) {
+        if (this.length == other.length && this.width == other.width) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
-    }
+}
 
