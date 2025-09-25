@@ -8,7 +8,8 @@ public class Unit0Exercises {
 
         // testing sleepIn() method
         System.out.println(obj.sleepIn(false, false));
-        public
+        public boolean equals 
+        
         
         // output: true
         // sleepIn(true, false) -> true
