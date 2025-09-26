@@ -1,18 +1,27 @@
 public class Line {
-    private int a, b, c;
 
-    
- public void setA(int a) {
-     this.a = a;
- }
+    private int a;
+    private int b;
+    private int c;
 
- public void setB(int b) {
-     this.b = b;
- }
+    public Line(int a, int b, int c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
 
- public void setC(int c) {
-     this.c = c;
- }
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public void setB(int b) {
+        this.b = b;
+    } 
+     
+
+    public void setC(int c) {
+        this.c = c;
+    }
 
 
     public int getA() {
@@ -33,16 +42,24 @@ public class Line {
     public double getSlope() {
         double slope = calculateSlope();
         return slope;
-    }
+    } 
+
 
     public double calculateSlope() {
-        double calculateSlope = (double)a/b;
+        double calculateSlope = -1 * ((double) a / b);
         return calculateSlope;
 
     }
 
 
-    public boolean is CoordinatedOnline(intx, inty) {
+    public boolean isCoordinateOnLine(int x, int y) {
+        if (a * x + b * y + c == 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+
         
 
     }
@@ -52,12 +69,14 @@ public class Line {
     }
 
 
-     public boolean equals(Line other) {
-        if (this.a == other.a && this.b == other.b) {
+    public boolean equals(Line other) {
+        if (this.a ==  other.a && this.b ==  other.b) {
             return true;
         } else {
             return false;
         }
     }
+
+
 }
 

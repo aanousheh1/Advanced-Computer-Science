@@ -7,11 +7,7 @@ public class Unit0Exercises {
         System.out.println();
 
         // testing sleepIn() method
-        System.out.println(obj.sleepIn(false, false));
-        public boolean equals 
-        
-        
-        // output: true
+        System.out.println(obj.sleepIn(false, false)); // output: true
         // sleepIn(true, false) -> true
         // sleepIn(false, true) -> true
 
@@ -28,15 +24,30 @@ public class Unit0Exercises {
     }
 
     public boolean sleepIn(boolean weekday, boolean vacation) {
-        return false;
+        if (!weekday || vacation) {
+            return true;
+        } else {
+            return false;
+        }
+
+
     }
 
     public int diff21(int n) {
-        return 0;
+        if (n > 21) {
+            return 2 * Math.abs(n - 21); 
+        } else {
+            return Math.abs(n - 21);
+        }
     }
 
     public double flooringCalculator(int sqft, double pricePerSqft) {
-        return 0.0;
+        if (sqft > 0 && pricePerSqft > 0) {
+            return sqft * pricePerSqft;
+        } else {
+            return 0.0;
+        }
+        
     }
 
 }
