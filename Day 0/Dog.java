@@ -1,4 +1,5 @@
 public class Dog {
+
     private String name;
     private String ownerName;
     private int age;
@@ -18,6 +19,10 @@ public class Dog {
     }
 
     public Dog() {
+        name = "Max";
+        ownerName = "Rob";
+        age = 6; 
+        dogId = 456;
         this.dogChar = generateDogChar();
         this.dogTag = generateDogTag();
         this.stillInFacility = true;
@@ -110,12 +115,4 @@ public class Dog {
 
     }
 
-
-
-
-
-
-
-
-    
 }

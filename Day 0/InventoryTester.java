@@ -3,9 +3,9 @@ public class InventoryTester {
         System.out.println("Inventory Tester");
 
         // Instantiating Inventory Objects
-        Inventory item1 = new Inventory("Laptop", 10, 799);
-        Inventory item2 = new Inventory("Desktop", 5, 999);
-        Inventory item3 = new Inventory("Desktop", 5, 999);
+        Inventory item1 = new Inventory("Laptop", 10, (int) 799.99);
+        Inventory item2 = new Inventory("Desktop", 5, (int) 999.99);
+        Inventory item3 = new Inventory("Desktop", 5, (int) 999.99);
 
         // Testing Getters
         System.out.println(
