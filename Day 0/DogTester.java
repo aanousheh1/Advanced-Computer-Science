@@ -15,7 +15,7 @@ public class DogTester {
         
         int dogId = 123; 
         int age = 4;
-        System.out.println("New Id and age for Cat 2: ");
+        System.out.println("New Id and age for Dog 2: ");
         dog2.setDogId(dogId);
         dog2.setAge(age);
 
