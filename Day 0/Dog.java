@@ -12,9 +12,9 @@ public class Dog {
         this.name = name;
         this.ownerName = ownerName;
         this.age = age;
-        this.dogId = dogId;
-        this.dogChar = generateDogChar(this.dogId);
-        this.dogTag = generateDogTag();
+        this.dogId = PawesomeUtils.validateDogId(dogId);
+        this.dogChar = PawesomeUtils.generateDogChar(this.dogId);
+        this.dogTag = PawesomeUtils.generateDogTag(this.dogId, this.dogChar);
         this.stillInFacility = true;
     }
 
@@ -23,8 +23,8 @@ public class Dog {
         ownerName = "Rob";
         age = 6; 
         dogId = 456;
-        this.dogChar = generateDogChar(this.dogId);
-        this.dogTag = generateDogTag();
+        this.dogChar = PawesomeUtils.generateDogChar(this.dogId);
+        this.dogTag = PawesomeUtils.generateDogTag(this.dogId, this.dogChar);
         this.stillInFacility = true;
 
     }
@@ -58,7 +58,12 @@ public class Dog {
     }
 
     public void setDogId(int dogId) {
-        this.dogId = dogId;
+        this.dogId = PawesomeUtils.validateDogId(dogId);
+        this.dogChar = PawesomeUtils.generateDogChar(this.dogId);
+        char newChar = PawesomeUtils.generateDogChar(this.dogId);
+        setDogChar(newChar);
+        String newTag = PawesomeUtils.generateDogTag(this.dogId, this.dogChar);
+        setDogTag(newTag);
     }
 
     public char getDogChar() {
@@ -66,7 +71,9 @@ public class Dog {
     }
 
     public void setDogChar(char dogChar) {
-        this.dogChar = dogChar;
+        this.dogChar = PawesomeUtils.generateDogChar(this.dogId);
+        this.dogTag = PawesomeUtils.generateDogTag(this.dogId, this.dogChar);
+        
     }
 
     public String getDogTag() {
@@ -87,57 +94,25 @@ public class Dog {
 
 
     public String toString() {
-       if(stillInFacility = true) {
-        return  name + " is a good dog. They are  " + age + " years old and belong to " + ownerName + ". They are currently in our facility.  For employee use only: DogTag is " + dogTag + ".";
-    } else {
-        return  name + " is a good dog. They are  " + age + " years old and belong to " + ownerName + ". They are currently not in our facility. For employee use only: DogTag is " + dogTag + ".";
-    }
+        if (stillInFacility = true) {
+            return  name + " is a good dog. They are  " + age + " years old and belong to " + ownerName 
+                + ". They are currently in our facility.  For employee use only: DogTag is " + dogTag + ".";
+        } else {
+            return  name + " is a good dog. They are  " + age + " years old and belong to " 
+                + ownerName + ". They are currently not in our facility. For employee use only: DogTag is " + dogTag + ".";
+        }
     }
 
     public boolean equals(Dog other) {
         if (this.name.equals(other.name) && this.ownerName.equals(other.ownerName)
-         && this.age == other.age && this.dogTag.equals(other.dogTag) && this.stillInFacility == other.stillInFacility) {
+            && this.age == other.age && this.dogTag.equals(other.dogTag) && this.stillInFacility == other.stillInFacility) {
             return true;
-         } else {
+        } else {
             return false;
-         }
+        }
     } 
 
-    public String generateDogTag() {
-        String generateDogTag = dogId + "" + dogChar;
-        return generateDogTag;
-    }
-
-    public static char generateDogChar(int dogId) {
-        char dogChar = (char) ('F' + (dogId % 10) + ((dogId / 10) % 10) + ((((dogId / 10) / 10) %  10 )));
-        return dogChar; 
-
-
-    }
-
-    public static String pickup(Dog dog, String personName) {
-        String ownersName = dog.getOwnerName();
-        String name = dog.getName();
-        if (dog.isStillInFacility() && ownersName.equals(personName)) {
-            return name + " has  not been picked up by their owner " + personName;
-        }
-        if (!dog.isStillInFacility() && ownersName.equals(personName)) {
-            dog.setStillInFacility(false);
-            return name + " has been picked up by their owner " + personName;
-        } else {
-            return name + "is not your dog and you cannot pick it up";
-        }
-
-    }
-
-    public static void checkIn(Dog dog , String personName) {
-        dog.setOwnerName(personName);
-        dog.setStillInFacility(true);
-
-    }
-
-    
-
+   
 
 
 

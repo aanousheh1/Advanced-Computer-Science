@@ -1,23 +1,39 @@
 public class CatTester {
     public static void main(String[] args) {
-        Cat myCat = new Cat("Betsy", "Tabby"); // add new
-        Cat otherCat = new Cat("Tiger Beast", "Tabby"); // add new
-        System.out.println(myCat.toString());
-        System.out.println("My Cat's Name: " + myCat.getName()); // add system.out.println
-        System.out.println("Are the cat's equal?" + myCat.equals(otherCat)); // add system.out.println
-        System.out.println("Is my cat hungry? " + myCat.getIsHungry()); // lowercase i and add system.out.println
-        System.out.println("Tabby" + myCat.getBreed());
+        Cat cat1 = new Cat("John", "Sarah", 4, "1185" );
+
+        cat1.setCatChar('Q');
+        cat1.setCatId("1623");
+        cat1.setMoodLevel(6);
+        cat1.setOwnerName("Olivia");
+
+        System.out.println(cat1.generateCatTag());
+        System.out.println(cat1.getCatChar());
+
+        Cat cat2 = new Cat("Jonah", "Ruby", 7, "1865");
+
+        System.out.println(cat1.equals(cat2));
+
+        for (int i = 0; i < 4; i++) {
+            PurrfectUtils.trimClaws(cat1);
+        }
+
+        PurrfectUtils.bootUp(cat1);
+        PurrfectUtils.bootUp(cat2);
+
+        PurrfectUtils.pet(cat1);
+        PurrfectUtils.pet(cat2);
+
+        PurrfectUtils.cleanLitterBox(cat1);
+         PurrfectUtils.cleanLitterBox(cat2);
+
+        PurrfectUtils.feed(cat1);
+        PurrfectUtils.feed(cat2);
+
+        
 
 
-        String firstName = "Tiger";
-        String lastName = "Beast"; // change == to =
-        String name = firstName + " " + lastName;
-
-        System.out.println("Changing the cat's name...");
-        myCat.setName(name); 
-        otherCat.setName(name); // add this line
-        System.out.println("The two cat's are the same now: " + myCat.equals(otherCat));
 
     }
-
+    
 }
