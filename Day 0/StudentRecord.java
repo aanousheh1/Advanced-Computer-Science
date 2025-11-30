@@ -25,7 +25,16 @@ public class StudentRecord {
     }
 
     public String toString() {
-        return name + "scores: " + scores; 
+        String out = name + "'s scores: [";
+        for (int i = 0; i < scores.length; i++) {
+            out += scores[i];
+            if (i < scores.length - 1) {
+                out = out + ", ";
+            }
+        
+        }
+        out = out + "]"; 
+        return out; 
     }
 
     public boolean equals(StudentRecord other) {
@@ -45,8 +54,47 @@ public class StudentRecord {
 
     }
 
-    public double getAverage(int first, int last)
-        for (int i = 0; i < )
+    public double getAverage(int first, int last) {
+        int sum = 0; 
+        for (int i = first; i <= last; i++) {
+            sum = sum + scores[i];
+
+        }
+
+        int numValues = (last - first) + 1;
+        return (double) sum / numValues;
+
+
+    }
+
+    public int getTestScore(int testNumber) {
+        if (testNumber >= scores.length || testNumber < 0) {
+            return -1; 
+        } else {
+            return scores[testNumber];
+        }
+    }
+
+    public boolean hasImproved() {
+        for (int i = 0; i < scores.length - 1; i++) {
+            if (scores[i] > scores[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public double getFinalAverage() {
+        if (hasImproved() == true) {
+            return getAverage(scores.length / 2, scores.length - 1);
+        } else {
+            return getAverage(0, scores.length - 1);
+        }
+
+    }
+
+
+
 
 
 
