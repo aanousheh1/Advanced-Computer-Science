@@ -3,19 +3,16 @@ public class ArrayOps {
     public static String printStringArray(String[] array) {
         String output = "[";
         for (int i = 0; i < array.length; i++) {
-            output += array[i];
             if (i < array.length - 1) {
-                output = output + ", ";
+                output = output + array[i]+ ", ";
             }
-        
+
         }
         output = output + "]";
         System.out.println(output);
 
         return output;
     }
-
-    
 
     public static String printIntegerArray(int[] array) {
         String output = "[";
@@ -24,7 +21,7 @@ public class ArrayOps {
             if (i < array.length - 1) {
                 output = output + ", ";
             }
-        
+
         }
         output = output + "]";
         System.out.println(output);
@@ -37,11 +34,10 @@ public class ArrayOps {
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
-            } 
+            }
         }
         return max;
     }
-
 
     public static String findLongestString(String[] array) {
         if (array == null) {
@@ -57,7 +53,6 @@ public class ArrayOps {
         return first;
     }
 
-
     public static double averageStringLength(String[] array) {
         if (array == null) {
             return 0.0;
@@ -69,17 +64,16 @@ public class ArrayOps {
             if (first != null) {
                 sum += first.length();
                 numString += 1;
-            } 
+            }
 
         }
         if (numString == 0) {
-            return 0.0; 
+            return 0.0;
         }
 
         return (double) sum / numString;
     }
 
-   
     public static int[] countLetterFrequencies(String input) {
         int[] alphabet = new int[26];
         if (input == null) {
@@ -93,16 +87,15 @@ public class ArrayOps {
                 alphabet[index]++;
             } else if (letter >= 'a' && letter <= 'z') {
                 index = letter - 'a';
-                alphabet[index] += 1; 
+                alphabet[index] += 1;
             }
         }
         return alphabet;
     }
 
-   
     public static int[] removeIntAndScoot(int[] array, int index) {
         if (array == null) {
-            return new int[0]; 
+            return new int[0];
         }
         int[] array2 = new int[array.length];
         int index2 = 0;
@@ -117,10 +110,9 @@ public class ArrayOps {
         return array2;
     }
 
-  
     public static int[] resizeIntArray(int[] array) {
         if (array == null) {
-            return new int[0]; 
+            return new int[0];
         }
         int[] array2 = new int[array.length * 2];
         int index = 0;
@@ -128,18 +120,16 @@ public class ArrayOps {
             array2[index] = array[i];
             index += 1;
 
-
-
         }
         return array2;
-        
+
     }
 
     public static String[] addNumToStringArray(String[] array) {
         if (array == null) {
-            return new String[0]; 
+            return new String[0];
         }
-        String[] array2 = new String [array.length];
+        String[] array2 = new String[array.length];
         for (int i = 0; i < array.length; i++) {
             if (array[i] != null) {
                 array2[i] = "#" + i + " " + array[i];
@@ -147,22 +137,19 @@ public class ArrayOps {
         }
         return array2;
 
-     
     }
 
-    
     public static int[] reverseIntArray(int[] array) {
         if (array == null) {
-            return new int[0]; 
+            return new int[0];
         }
         int[] array2 = new int[array.length];
-        int index = 0; 
+        int index = 0;
         for (int i = array.length - 1; i >= 0; i--) {
             array2[index] = array[i];
-            index += 1; 
+            index += 1;
         }
-        return array2; 
+        return array2;
     }
-
 
 }

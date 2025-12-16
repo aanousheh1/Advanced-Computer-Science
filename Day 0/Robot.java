@@ -121,8 +121,6 @@ public class Robot {
 
         }
     
-            
-
     
         for (int i = 0; i <= position * 2; i++) {
             System.out.print(" ");
