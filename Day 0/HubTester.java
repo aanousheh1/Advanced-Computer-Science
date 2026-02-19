@@ -16,8 +16,8 @@ public class HubTester {
 
     public static void testLogin() {
         Hub hub = new Hub();
-        hub.registerStudent("Autrin", "111", "autrin@yah.com");
-        hub.registerStudent("connor", "222", "connor@yah.com");
+        hub.registerStudent("Autrin", "111", "autrin@yaho.com");
+        hub.registerStudent("connor", "222", "connor@yaho.com");
 
         try {
             hub.loginStudent("jake", "000");
@@ -29,7 +29,7 @@ public class HubTester {
 
     public static void testExist() {
         Hub hub = new Hub();
-        hub.registerStudent("Autrin", "111", "autrin@yah.com");
+        hub.registerStudent("Autrin", "111", "autrin@yaho.com");
 
         try {
             hub.doesStudentExist("Autrin");
@@ -42,7 +42,7 @@ public class HubTester {
 
     public static void testEnsureStudent() {
         Hub hub = new Hub();
-        hub.registerStudent("Connor", "111", "autrin@yah.com");
+        hub.registerStudent("Connor", "111", "autrin@yaho.com");
 
         try {
             hub.doesStudentExist("Connor");
@@ -57,7 +57,7 @@ public class HubTester {
 
         try {
             Hub hub = new Hub();
-            hub.registerStudent("C@nnor", "111", "autrin@yah.com");
+            hub.registerStudent("C@nnor", "111", "autrin@yaho.com");
             ;
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -70,7 +70,7 @@ public class HubTester {
 
         try {
             Hub hub = new Hub();
-            hub.registerStudent(null, "111", "autrin@yah.com");
+            hub.registerStudent(null, "111", "autrin@yaho.com");
             ;
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -93,7 +93,7 @@ public class HubTester {
 
     public static void testStudentAt() {
         try {
-            Student student = new Student("C@nnor", "111", "autrin@yah.com");
+            Student student = new Student("C@nnor", "111", "autrin@yaho.com");
 
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -104,7 +104,7 @@ public class HubTester {
 
     public static void testBlankStudentName() {
         try {
-            Student student = new Student(null, "111", "autrin@yah.com");
+            Student student = new Student(null, "111", "autrin@yaho.com");
 
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -112,7 +112,7 @@ public class HubTester {
         }
 
         try {
-            Student student = new Student("", "111", "autrin@yah.com");
+            Student student = new Student("", "111", "autrin@yaho.com");
 
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -134,7 +134,7 @@ public class HubTester {
 
     public static void testChange() {
         try {
-            Student student = new Student("Autrin", "111", "autrin@yah.com");
+            Student student = new Student("Autrin", "111", "autrin@yaho.com");
             student.changeName("@utrin");
 
         } catch (Exception e) {
@@ -142,8 +142,8 @@ public class HubTester {
             System.out.println("The method threw an exception, as intended");
         }
         try {
-            Student student = new Student("Autrin", "111", "autrin@yah.com");
-            Student student2 = new Student("Connor", "111", "autrin@yah.com");
+            Student student = new Student("Autrin", "111", "autrin@yaho.com");
+            Student student2 = new Student("Connor", "111", "autrin@yaho.com");
             student2.changeName("Autrin");
 
         } catch (Exception e) {
@@ -155,7 +155,7 @@ public class HubTester {
 
     public static void testBlankStudentPassword() {
         try {
-            Student student = new Student("Autrin", null, "autrin@yah.com");
+            Student student = new Student("Autrin", null, "autrin@yaho.com");
 
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -163,7 +163,7 @@ public class HubTester {
         }
 
         try {
-            Student student = new Student("Autrin", "", "autrin@yah.com");
+            Student student = new Student("Autrin", "", "autrin@yaho.com");
 
         } catch (Exception e) {
             System.out.println(e.toString());

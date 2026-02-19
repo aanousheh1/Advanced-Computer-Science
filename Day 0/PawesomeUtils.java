@@ -1,13 +1,12 @@
 public class PawesomeUtils {
 
     public static char generateDogChar(int dogId) {
-        char dogChar = (char) ('F' + (((dogId % 10) + ((dogId / 10) % 10) + ((((dogId / 10) / 10) %  10))) % 10));
-        return dogChar; 
-
+        char dogChar = (char) ('F' + (((dogId % 10) + ((dogId / 10) % 10) + ((((dogId / 10) / 10) % 10))) % 10));
+        return dogChar;
 
     }
 
-    public static String pickup(Dog dog, String personName) {
+    public static String pickup(Dog1 dog, String personName) {
         String ownersName = dog.getOwnerName();
         String name = dog.getName();
         if (ownersName.equals(personName)) {
@@ -19,7 +18,7 @@ public class PawesomeUtils {
 
     }
 
-    public static void checkIn(Dog dog, String personName) {
+    public static void checkIn(Dog1 dog, String personName) {
         if (validateDogTag(dog)) {
             dog.setOwnerName(personName);
             dog.setStillInFacility(true);
@@ -29,10 +28,6 @@ public class PawesomeUtils {
             dog.setStillInFacility(false);
             System.out.println(dog.getName() + " is considered a counterfeit dog and is denied entry to the daycare. ");
         }
-        
-
-    
-
 
     }
 
@@ -49,7 +44,7 @@ public class PawesomeUtils {
         }
     }
 
-    public static boolean validateDogTag(Dog dog) {
+    public static boolean validateDogTag(Dog1 dog) {
         int oldId = dog.getDogId();
         int newId = validateDogId(oldId);
         char letter = generateDogChar(newId);
@@ -63,7 +58,7 @@ public class PawesomeUtils {
 
     }
 
-    public static int convertAgeToHumanAge(Dog dog) {
+    public static int convertAgeToHumanAge(Dog1 dog) {
         int age = dog.getAge();
         if (age == 1) {
             return 15;
@@ -88,7 +83,5 @@ public class PawesomeUtils {
         }
 
     }
-
-
 
 }

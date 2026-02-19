@@ -4,13 +4,12 @@ public class RectangleTester {
         // Instantiation/initialization = new type()
 
         System.out.println("Hello world!");
-        Rectangle joe = new Rectangle();
-      
-        Rectangle samuel = new Rectangle(4, 10);
-    
+        Rectangle1 joe = new Rectangle1();
 
-        System.out.println("testing getWidth" + joe.getWidth()); 
-        System.out.println("testing getLength" + samuel.getLength()); 
+        Rectangle1 samuel = new Rectangle1(4, 10);
+
+        System.out.println("testing getWidth" + joe.getWidth());
+        System.out.println("testing getLength" + samuel.getLength());
         System.out.println("Testing setLength at first, length is " + samuel.getLength());
         System.out.println("Testing area" + samuel.calculateArea());
         System.out.println("Testing area" + samuel.getArea());
@@ -19,15 +18,9 @@ public class RectangleTester {
         System.out.println("Testing diagonal" + samuel.calculateDiagonal());
         System.out.println("Testing diagonal" + samuel.getDiagonal());
         System.out.println(joe.equals(samuel));
-        
-        
-        //stout.getLength()); stout.set
-        
+
+        // stout.getLength()); stout.set
+
     }
 
-
-
 }
-
-  
-

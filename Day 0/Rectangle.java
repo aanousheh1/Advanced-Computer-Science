@@ -1,105 +1,44 @@
-public class Rectangle {
-    private int length;
-    private int width;
-    private int area; 
-    private int perimeter;
-    private double diagonal; 
-   
+public class Rectangle extends Polygon {
+    private double length;
+    private double width;
 
-    // constructors
-    
-    // general default constructor
-    
+    public Rectangle(double width, double length) {
+        super(4);
+        this.width = width;
+        this.length = length;
+
+    }
 
     public Rectangle() {
-        // Initialize the private instance variables
-        length = 5;
-        width = 3;
+        super(4);
+        this.width = 3;
+        this.length = 4;
     }
 
-    // define the instance variables with the local parmeters
-
-    public Rectangle(int desiredLength, int desiredWidth) {
-        length = desiredLength;
-        width = desiredWidth;
+    public double getLength() {
+        return length;
     }
 
-    //getters
-
-    public int getLength() {
-        return length; 
+    public double getWidth() {
+        return width;
     }
 
-    public int getWidth() {
-        return width; 
+    public void setLength(double length) {
+        this.length = length;
     }
 
-    public int getArea() {
-        calculateArea();
-        return area;
+    public void setWidth(double width) {
+        this.width = width;
     }
 
-    public double getDiagonal() {
-        calculateDiagonal();
-        return diagonal;
+    public double getArea() {
+        return (width * length);
     }
 
-    public int getPerimeter() {
-        calculatePerimeter();
-        return perimeter;
-    }
-
-    // setters
-
-    public void setLength(int newLength) {
-        length = newLength;
+    public String toString() {
+        return super.toString() + "\nIt is a rectangle with a length of " + length + " and width of " + width
+                + ". Its area is " + getArea() + ".";
 
     }
 
-    public void setWidth(int newWidth) {
-        width = newWidth;
-    }
-
-    public void setArea(int area) {
-        this.area = area;
-    }
-
-    public void setDiagonal(int diagonal) {
-        this.diagonal = diagonal;
-    }
-
-    public void setPerimeter(int perimeter) {
-        this.perimeter = perimeter;
-    }
-
-    // methods
-
-    public int calculateArea() {
-        int calculateArea = length * width;
-        this.area = calculateArea;
-        return calculateArea;
-    }
-
-    public int calculatePerimeter() {
-        int calculatePerimeter = (length * 2) + (width * 2);
-        this.perimeter = calculatePerimeter;
-        return calculatePerimeter;
-      
-    }
-
-    public double calculateDiagonal() {
-        double calculateDiagonal = Math.sqrt((length * length) + (width * width));
-        this.diagonal = calculateDiagonal;
-        return calculateDiagonal;
-     
-    }
-
-    public boolean equals(Rectangle other) {
-        if (this.length == other.length && this.width == other.width) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
-
